@@ -1,3 +1,4 @@
+import json
 import csv
 from pathlib import Path
 def check_csv(path):
@@ -15,3 +16,6 @@ def return_budget_amount(path):
             return float(str_amount)
     except Exception as e:
         print(f"error! type error:{e}")
+
+def add_airline_to_file(json_path):
+    pass
