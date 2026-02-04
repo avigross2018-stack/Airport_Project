@@ -1,6 +1,7 @@
 from pathlib import Path
 import csv
-from actions_on_files import check_csv
+from actions_on_files import read_csv
+airport_entry_file = Path('./airport_entry_fee.csv')
 def file_exist(path):
     '''
     Docstring for file_exist
@@ -27,5 +28,11 @@ def manager_authentication(manager_name, manager_pw, file_path):
     return flag
 
 
-        
-        
+def read_airports_file(path):
+        airports_list = []      
+        with open(path, 'r') as f:
+            airports = csv.DictReader(f)
+            for row in airports:
+                airports_list.append(dict(row))
+        return airports_list
+

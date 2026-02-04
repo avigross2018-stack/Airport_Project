@@ -1,6 +1,6 @@
 import csv
 from pathlib import Path
-def check_csv(path):
+def read_csv(path):
     csv_lines = []
     with open(path, 'r') as f:
         csv_file = csv.reader(f)
