@@ -17,5 +17,5 @@ def return_budget_amount(path):
     except Exception as e:
         print(f"error! type error:{e}")
 
-def add_airline_to_file(json_path):
+def add_airline_to_file(json_path, origin_airport_code, target_airport_code):
     pass
