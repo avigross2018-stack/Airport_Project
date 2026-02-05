@@ -1,3 +1,4 @@
+import json
 import csv
 from pathlib import Path
 def read_csv(path):
@@ -17,9 +18,12 @@ def return_budget_amount(path):
         print(f"error! type error:{e}")
 
 def read_airports_file(path):
-        airports_list = []      
-        with open(path, 'r') as f:
-            airports = csv.DictReader(f)
-            for row in airports:
-                airports_list.append(dict(row))
-        return airports_list
+    airports_list = []
+    with open(path, 'r') as f:
+        airports = csv.DictReader(f)
+        for row in airports:
+            airports_list.append(dict(row))
+    return airports_list
+
+def add_airline_to_file(json_path, origin_airport_code, target_airport_code):
+    pass
