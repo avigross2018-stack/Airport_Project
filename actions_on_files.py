@@ -51,7 +51,7 @@ def add_airline_to_available_flights(js_path, origin_airport_code, target_airpor
     with open(js_path, 'r') as f:
         available_airline = json.load(f)
     if {'Origin_airport': origin_airport_code.upper(), 'Destination_airport': target_airport_code.upper()} in available_airline['available_line']:
-        return 'The line already exist'
+       print('The line already exist')
     else:
         available_airline["available_line"].append({"Origin_airport" : origin_airport_code.upper(), "Destination_airport" : target_airport_code.upper()})
         available_airline["available_line"].append({"Origin_airport" : target_airport_code.upper(), "Destination_airport" : origin_airport_code.upper()})
@@ -78,7 +78,7 @@ def compare_budget_to_price(origin_airport_code, target_airport_code, airport_pr
     if amount_bud > final_price:       
         adding_airline = add_airline_to_available_flights(available_flights_file, origin_airport_code, target_airport_code)
         if adding_airline == 'The line already exist':
-            print('The line already exist')
+            return 'The line already exist'
             # return 'The line already exist'
         elif adding_airline == "The airline added to you available flights":
             while True:        

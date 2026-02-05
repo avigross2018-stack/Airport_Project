@@ -5,7 +5,7 @@ import random
 def load_avaliable_lines(path):
     with open(path) as json_file:
          data = json.load(json_file)
-    return data['available_line']
+    return data["available_line"]
 
 # x = load_avaliable_lines()
 # print(load_avaliable_lines())
@@ -13,7 +13,7 @@ def load_avaliable_lines(path):
 
 
 def show_lines(lines):
-    print('available flights:')
+    print('Available flights:')
     for i,line in enumerate(lines,start=1):
         origin = line['Origin_airport']
         destination = line['Destination_airport']
@@ -27,7 +27,7 @@ def chose_line(lines):
         try:
             if int(choice) > 0 and int(choice) <= index:
                 selected=lines[int(choice) -1]
-                print (f'you select the line:{selected['Origin_airport']} -> {selected['Destination_airport']} ')
+                print (f'You select the line:{selected['Origin_airport']} -> {selected['Destination_airport']} ')
                 break
             else:
                 print('Invalid value')
@@ -49,5 +49,5 @@ def ticket_id():
     numbers = list(string.digits)
     random_list = letters + symbols + numbers
     random_id = random.choices(random_list, k=8)
-    return ''.join(random_id)
+    print(''.join(random_id))
 
