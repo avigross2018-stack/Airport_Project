@@ -78,12 +78,17 @@ def compare_budget_to_price(origin_airport_code, target_airport_code, airport_pr
         if adding_airline == 'The line already exist':
             print('The line already exist')
             # return 'The line already exist'
-        elif adding_airline == "The airline added to you available flights":        
-            valid = input("you have enough money. \nDo you want to perch \n1) Yes \n2) No\n")
-            if valid == '1':
-                update_budget_file(amount_bud - final_price, budget_path)
-            elif valid == '2':
-                return 'Perch cancel'
+        elif adding_airline == "The airline added to you available flights":
+            while True:        
+                valid = input("you have enough money. \nDo you want to perch \n1) Yes \n2) No\n")
+                if valid == '1':
+                    return update_budget_file(amount_bud - final_price, budget_path)
+                    
+                elif valid == '2':
+                    return 'Perch cancel'
+                else:
+                    print('Wrong input')
+                    continue
     elif amount_bud < final_price:
         return 'There is not enough money'
             
