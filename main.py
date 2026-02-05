@@ -1,6 +1,6 @@
 from checking_functions import manager_authentication, file_exist
 from pathlib import Path
-from actions_on_files import check_csv
+from actions_on_files import read_csv
 
 
 
@@ -20,7 +20,7 @@ def menu():
         if user == '1':
             manager_name = input('please enter your name: ')
             manager_pw = input('please enter your password: ')
-            cred_list = check_csv(credentials_file)
+            cred_list = read_csv(credentials_file)
             check_manager_info = manager_authentication(manager_name, manager_pw, cred_list)
             if check_manager_info == False:
                 return 'Incorrect user name, or password'
@@ -33,7 +33,7 @@ def menu():
             print('Invalid input')
             continue
 
-                
+              
 
 
 
