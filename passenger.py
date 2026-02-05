@@ -1,4 +1,6 @@
 import json
+import string
+import random
 
 def load_avaliable_lines(path):
     with open(path) as json_file:
@@ -41,4 +43,11 @@ def passenger_unit(path):
     chose_line(lines)
 
 
-# passenger_unit()
+def ticket_id():
+    letters = list(string.ascii_letters)
+    symbols = list(string.punctuation)
+    numbers = list(string.digits)
+    random_list = letters + symbols + numbers
+    random_id = random.choices(random_list, k=8)
+    return ''.join(random_id)
+

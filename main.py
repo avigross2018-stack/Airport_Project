@@ -1,7 +1,7 @@
 from checking_functions import manager_authentication, file_exist
 from pathlib import Path
 from actions_on_files import read_csv
-from passenger import passenger_unit
+from passenger import passenger_unit, ticket_id
 
 
 
@@ -31,6 +31,8 @@ def menu():
         elif user == '2':
             flag = True
             passenger_unit(available_flights_file)
+            print('Your ticket id is')
+            print(ticket_id())
         else:
             print('Invalid input')
             continue

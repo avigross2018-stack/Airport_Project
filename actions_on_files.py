@@ -31,6 +31,8 @@ def read_airports_file(path):
             airports_list.append(dict(row))
     return airports_list
 
+
+
 def check_exist_airport(airports_file_path, origin_airport_code, target_airport_code):
     airport_dict = read_airports_file(airports_file_path)
     valid_if_exist = 0  #if equal 2 the airports exists else one or both doesn't exist
@@ -92,13 +94,12 @@ def compare_budget_to_price(origin_airport_code, target_airport_code, airport_pr
     elif amount_bud < final_price:
         return 'There is not enough money'
             
-    
 
 
         
-budget_file = Path('./budget.txt')
-js = Path('./available_flights.json')
-cs = Path('./airport_entry_fee.csv')
-# print(check_exist_airport(js, cs, 'lax', 'jfk'))
+# budget_file = Path('./budget.txt')
+# js = Path('./available_flights.json')
+# cs = Path('./airport_entry_fee.csv')
+# # print(check_exist_airport(js, cs, 'lax', 'jfk'))
 
-print(compare_budget_to_price('lax','jfk',cs,budget_file,js))
+# print(compare_budget_to_price('lax','jfk',cs,budget_file,js))
