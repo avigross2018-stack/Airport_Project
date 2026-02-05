@@ -1,1 +1,16 @@
-{}
+{
+  "available_lines": [
+    {
+      "origin_airport": "TLV",
+      "destination_airport": "JFK"
+    },
+    {
+      "origin_airport": "TLV",
+      "destination_airport": "LHR"
+    },
+    {
+      "origin_airport": "FRA",
+      "destination_airport": "DXB"
+    }
+  ]
+}

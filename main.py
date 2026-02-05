@@ -1,6 +1,7 @@
 from checking_functions import manager_authentication, file_exist
 from pathlib import Path
 from actions_on_files import read_csv
+from passenger import passenger_unit
 
 
 
@@ -28,7 +29,7 @@ def menu():
             flag = True
         elif user == '2':
             flag = True
-            pass
+            passenger_unit()
         else:
             print('Invalid input')
             continue
@@ -41,4 +42,4 @@ def menu():
 
 
 
-print(menu())
+menu()
