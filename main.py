@@ -9,6 +9,7 @@ budget_file = Path('./budget.txt')
 airport_entry_file = Path('./airport_entry_fee.csv')
 continents_pricing_file = Path('./continents_pricing.csv')
 credentials_file = Path('./credential.csv')
+available_flights_file = Path('./available_flights.json')
 
 def menu():
     bud_check = file_exist(budget_file)
@@ -29,7 +30,7 @@ def menu():
             flag = True
         elif user == '2':
             flag = True
-            passenger_unit()
+            passenger_unit(available_flights_file)
         else:
             print('Invalid input')
             continue

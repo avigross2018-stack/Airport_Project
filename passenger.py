@@ -1,28 +1,42 @@
 import json
 
-def load_avaliable_lines():
-    with open('available_flights.json') as json_file:
+def load_avaliable_lines(path):
+    with open(path) as json_file:
          data = json.load(json_file)
-    return data['available_lines']
+    return data['available_line']
+
+# x = load_avaliable_lines()
+# print(load_avaliable_lines())
 
 
 
 def show_lines(lines):
     print('available flights:')
     for i,line in enumerate(lines,start=1):
-        origin = line['origin_airport']
-        destination = line['destination_airport']
+        origin = line['Origin_airport']
+        destination = line['Destination_airport']
         print(f'{i}. {origin} -> {destination}')
 
-
+# show_lines(x)
 def chose_line(lines):
-    choice=int(input('Enter your line '))
-    selected=lines[choice-1]
-    print (f'you selct the line:{selected['origin_airport']} -> {selected['destination_airport']} ')
+    index = len(lines)
+    while True:
+        choice=input('Enter your line ')
+        try:
+            if int(choice) > 0 and int(choice) <= index:
+                selected=lines[int(choice) -1]
+                print (f'you select the line:{selected['Origin_airport']} -> {selected['Destination_airport']} ')
+                break
+            else:
+                print('Invalid value')
+                continue
+        except ValueError:
+            print('Invalid value')
+            continue
 
 
-def passenger_unit():
-    lines=load_avaliable_lines()
+def passenger_unit(path):
+    lines=load_avaliable_lines(path)
     show_lines(lines)
     chose_line(lines)
 
