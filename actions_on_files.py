@@ -15,3 +15,11 @@ def return_budget_amount(path):
             return float(str_amount)
     except Exception as e:
         print(f"error! type error:{e}")
+
+def read_airports_file(path):
+        airports_list = []      
+        with open(path, 'r') as f:
+            airports = csv.DictReader(f)
+            for row in airports:
+                airports_list.append(dict(row))
+        return airports_list

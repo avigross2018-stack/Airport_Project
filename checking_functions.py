@@ -28,11 +28,5 @@ def manager_authentication(manager_name, manager_pw, file_path):
     return flag
 
 
-def read_airports_file(path):
-        airports_list = []      
-        with open(path, 'r') as f:
-            airports = csv.DictReader(f)
-            for row in airports:
-                airports_list.append(dict(row))
-        return airports_list
+
 
